@@ -15,17 +15,19 @@ var solarized_green   = "#859900";
 
 
 
-var phrase = ["kick", "cat"]
+var phrase = ["kick", "cat", "spin"]
+
+
 
 for (var i = 0; i < phrase.length; i++){
 
-    var word = phrase[i]
+    callAPI(phrase[i])
 
-console.log('word before api ' + word)
+}//forloop
 
+
+function callAPI(word){
     $.get('http://api.pearson.com/v2/dictionaries/entries?headword=' + word).done(function(response){
-
-console.log('word after api ' + word)
 
         var partOfSpeech = response.results[0].part_of_speech;
         console.log(partOfSpeech)
@@ -33,8 +35,7 @@ console.log('word after api ' + word)
         changeColor(partOfSpeech,word);
 
     }) //$.get
-
-}//forloop
+}
 
 
 
@@ -44,7 +45,7 @@ console.log('word after api ' + word)
 
 
 function changeColor(partOfSpeech, word){
-console.log('change color ' + word)
+
     if (partOfSpeech === 'verb'){
         $(".solarizedTxt").append("<span style=color:" + solarized_orange + ">" + word + "</span>")
 
