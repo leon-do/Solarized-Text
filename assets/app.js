@@ -15,7 +15,7 @@ var solarized_green   = "#859900";
 
 
 
-var phrase = ["kick", "cat", "spin"]
+var phrase = ["kick", "cat", "spin"];
 
 
 
