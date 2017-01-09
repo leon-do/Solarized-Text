@@ -46,6 +46,8 @@ function callAPI(word){
 
 function changeColor(partOfSpeech, word){
 
+    word = word + " ";
+
     if (partOfSpeech === 'verb'){
         $(".solarizedTxt").append("<span style=color:" + solarized_orange + ">" + word + "</span>")
 
