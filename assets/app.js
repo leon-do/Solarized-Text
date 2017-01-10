@@ -27,7 +27,7 @@ for (var i = 0; i < phrase.length; i++){
 
 
 function callAPI(word){
-    $.get('http://api.pearson.com/v2/dictionaries/entries?headword=' + word).done(function(response){
+    $.get('https://api.pearson.com/v2/dictionaries/entries?headword=' + word).done(function(response){
 
         var partOfSpeech = response.results[0].part_of_speech;
         console.log(partOfSpeech)
